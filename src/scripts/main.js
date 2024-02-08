@@ -23,7 +23,28 @@ let dragStartPositionX = undefined;
 let dragEndPositionX = undefined;
 const gallery_items = document.getElementById("gallery_items");
 
+const btn_gallery_previous =  document.getElementById("gallery_control_previous");
+const btn_gallery_next =  document.getElementById("gallery_control_next");
+
+btn_gallery_previous.addEventListener("click", ()=>{
+  gallery_items.style.transform= "translateX(0px)";
+  btn_gallery_previous.classList.add("disabled");
+  btn_gallery_next.classList.remove("disabled");
+})
+
+btn_gallery_next.addEventListener("click", ()=>{
+  const translateEnd = -980;
+  gallery_items.style.transform= `translateX(${translateEnd}px)`;
+  btn_gallery_previous.classList.remove("disabled");
+  btn_gallery_next.classList.add("disabled");
+})
+
+let img = new Image();
+img.src ="../images/cropped-fav_512-1-192x192.png";
+
+
 gallery_items.addEventListener("dragstart", (ev) => {
+  ev.dataTransfer.setDragImage(img, -99999, -99999);
   dragStartPositionX = ev.screenX;
   console.log("draging galery");
   // gallery_items.style.transform = "translateX(-980px)";
@@ -33,7 +54,7 @@ gallery_items.addEventListener("dragstart", (ev) => {
 });
 
 function handleDragOver(ev) {
-  ev.dataTransfer.setDragImage(el, -99999, -99999);
+  
   console.log(ev.screenX);
   dragEndPositionX = ev.screenX;
 

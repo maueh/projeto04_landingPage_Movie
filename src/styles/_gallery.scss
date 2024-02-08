@@ -31,6 +31,14 @@
   ul {
     display: grid;
     grid-template-columns: repeat(6, 25%);
+
+    @media (max-width: variables.$tabletBreakpoint) {
+      grid-template-columns: repeat(6, 33.333%);
+    }
+
+    @media (max-width: variables.$mobileBreakpoint) {
+      grid-template-columns: repeat(6, 50%);
+    }
   }
 
   li {
