@@ -1,0 +1,142 @@
+@use "variables";
+
+.footer {
+  background-color: black;
+  font-size: 14px;
+  padding-top: 40px;
+
+  &__socialmedia {
+    padding: 40px 0;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @media (max-width: variables.$tabletBreakpoint) {
+        justify-content: space-evenly;
+      }
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 30px;
+
+      @media (max-width: variables.$tabletBreakpoint) {
+        margin: 0;
+      }
+    }
+
+    a {
+      background-color: variables.$primaryColor;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      @media (max-width: variables.$tabletBreakpoint) {
+        max-width: 50px;
+        max-height: 50px;
+      }
+
+      @media (max-width: variables.$mobileBreakpoint) {
+        max-width: 40px;
+        max-height: 40px;
+      }
+
+      &:hover {
+        background-color: variables.$highlightColor;
+      }
+    }
+
+    img {
+      width: 27px;
+      height: 27px;
+
+      @media (max-width: variables.$tabletBreakpoint) {
+        max-width: 18px;
+        max-height: 18px;
+      }
+    }
+  }
+
+  &__companies {
+    padding-bottom: 40px;
+    & ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+    & li {
+      list-style: none;
+      width: 90px;
+      display: flex;
+      @media (max-width: variables.$tabletBreakpoint) {
+        width: 80px;
+      }
+    }
+    & svg {
+      width: 100%;
+      fill: variables.$primaryColor;
+    }
+
+    & a:hover {
+      opacity: 0.75;
+    }
+
+    #logo-remedy-2023 {
+      padding: 20px;
+      @media (max-width: variables.$tabletBreakpoint) {
+        padding: 20px;
+      }
+    }
+  }
+
+  a {
+    color: variables.$primaryColor;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: variables.$highlightColor;
+    }
+  }
+
+  &__rating {
+    width: 45px;
+  }
+
+  .disclaimers {
+    border-top: 1px solid variables.$borderFooter;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+
+    & p {
+      display: flex;
+      gap: 10px;
+      @media (max-width: variables.$tabletBreakpoint) {
+        display: inline;
+        text-align: center;
+      }
+    }
+  }
+
+  .rating {
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+
+    @media (max-width: variables.$tabletBreakpoint) {
+      position: relative;
+      margin-top: 50px;
+    }
+  }
+}

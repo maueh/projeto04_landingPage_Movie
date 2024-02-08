@@ -1,0 +1,66 @@
+@use "variables";
+
+.gallery {
+  background-image: url("../images/gallery/Preorder_background.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding: 40ps 60px;
+  overflow: hidden;
+
+  &__container {
+    width: 1920px;
+    // overflow-x: hidden;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding: 120px 60px;
+    translate: 0%;
+
+    &--end {
+      translate: -50%;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(6, 25%);
+  }
+
+  li {
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__controlls {
+    position: absolute;
+    right: 60px;
+    top: 70px;
+  }
+
+  &__controll {
+    width: 45px;
+    height: 40px;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 24px;
+    height: auto;
+    & > path {
+      fill: variables.$primaryColor;
+    }
+  }
+}

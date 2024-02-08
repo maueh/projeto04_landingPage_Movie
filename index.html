@@ -4,9 +4,648 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>O Grande Hotel Budapeste</title>
+    <link rel="stylesheet" href="https://use.typekit.net/qwp2wyw.css" />
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/cdf3wdg.css" /> -->
     <link rel="stylesheet" href="dist/css/main.css" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./dist//images/cropped-fav_512-1-192x192.png" />
   </head>
   <body>
-    <h1>Olá</h1>
+    <header class="header">
+      <div class="header__background">
+        <img
+          src="./dist/images/Alan_Wake_2_keyart_for_web3-2560x1318.webp"
+          alt=""
+        />
+      </div>
+
+      <div class="header-bar" id="header_bar">
+        <div class="header-bar__container container">
+          <h1>
+            <div class="header--logo">
+              <!-- <img src="/dist/images/svg/logo.svg" alt="Alan Wake II" /> -->
+              <svg
+                width="174"
+                height="37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1629_1270)" fill="#97AC9F">
+                  <path
+                    d="M157.202 0h7.648v36.236h-7.648V0zm9.151 0h7.648v36.236h-7.648V0zM18.983 0h7.648v30.205h4.556v6.03H18.983V0zm-7.648 36.236h7.16L13.938 0H4.556L0 36.236h7.16l.43-6.031h3.314l.431 6.03zM8.013 24.284L9.247 7.033l1.233 17.25H8.013zM43.01 36.236h7.16L45.614 0h-9.383l-4.557 36.236h7.16l.43-6.031h3.315l.43 6.03h.002zm-3.32-11.952l1.233-17.251 1.234 17.25H39.69zM61.56 0v20.147L58.197 0H50.66v36.236h6.345V16.134l3.363 20.102h7.54V0H61.56zm76.844 0h11.878v5.921h-4.231v9.236h4.231v5.92h-4.231v9.128h4.231v6.03h-11.878V0zm13.499 0a.9.9 0 00-.896.897c0 .507.408.897.896.897a.902.902 0 00.895-.897.904.904 0 00-.895-.897zm-.003 1.65a.752.752 0 11.006-1.504.752.752 0 01-.006 1.504z"
+                  />
+                  <path
+                    d="M152.073.906c.071-.023.189-.061.189-.247 0-.266-.232-.266-.352-.266h-.344V1.4h.193V.997h.175c.071 0 .09.028.104.085 0 .014.034.27.038.319h.214c-.029-.048-.043-.185-.053-.266-.018-.128-.028-.218-.165-.228l.001-.001zm-.162-.071h-.155v-.28h.161c.051 0 .146 0 .146.137 0 .053-.024.143-.152.143zm-40.03 35.401h7.16L114.485 0h-9.383l-4.557 36.236h7.159l.431-6.031h3.315l.43 6.03h.001zm-3.322-11.952l1.234-17.251 1.233 17.25h-2.467zM95.994 0l-1.817 20.147L92.359 0h-6.873l-1.818 20.147L81.851 0h-7.582l4.538 36.236h8.298l1.83-20.102 1.805 20.102h8.297L103.575 0h-7.581zm41.922 0h-7.539l-3.2 16.788V0h-7.648v36.236h7.648V19.46l3.2 16.776h7.539l-4.337-18.118L137.916 0z"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1629_1270">
+                    <path fill="#fff" d="M0 0h174v36.236H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </h1>
+          <a class="header__button--outlined" href="#">Compre já</a>
+
+          <div class="header__navigation--end">
+            <div class="language">
+              <button class="language__button" id="btn_language">
+                <!-- <span 
+              ><img
+                class="header__navigation--icon"
+                src="./dist/images/svg/icon_World.svg"
+                alt="" /></span
+            >--><svg
+                  id="icon_language"
+                  class="language__button__icon"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- <g clip-path="url(#clip0_255_13388)"> -->
+                  <path
+                    d="M24.9697 31.4508C25.9303 30.3292 26.7716 28.9934 27.4508 27.4738H29.8221C28.5043 29.1156 26.8531 30.4732 24.9697 31.4508ZM6.17674 27.4738H8.548C9.22632 28.9934 10.0685 30.3292 11.0292 31.4508C9.14484 30.4732 7.49453 29.1156 6.17674 27.4738ZM11.0292 4.54842C10.0685 5.67011 9.22632 7.00589 8.548 8.52642H6.17674C7.49453 6.88368 9.14579 5.52705 11.0292 4.54842ZM29.8221 8.52642H27.4508C26.7716 7.00589 25.9303 5.67011 24.9697 4.54842C26.8531 5.52611 28.5043 6.88368 29.8221 8.52642ZM29.3361 17.0527C29.2489 14.6786 28.8416 12.4381 28.1727 10.4212H31.1124C32.2559 12.3936 32.9607 14.6455 33.1095 17.0527H29.3361ZM29.3361 18.9475H33.1095C32.9607 21.3547 32.2559 23.6057 31.1124 25.5791H28.1727C28.8416 23.5621 29.2489 21.3216 29.3361 18.9475ZM18.9473 25.5791V18.9475H27.4433C27.3504 21.3547 26.9099 23.6057 26.1956 25.5791H18.9473ZM18.9473 33.0813V27.4738H25.3884C23.8385 30.5651 21.5497 32.6673 18.9473 33.0813ZM17.0525 27.4738V33.0813C14.4501 32.6673 12.1603 30.5651 10.6104 27.4738H17.0525ZM8.55558 18.9475H17.0525V25.5791H9.80326C9.08895 23.6057 8.64842 21.3547 8.55558 18.9475ZM6.66274 17.0527H2.88937C3.03906 14.6455 3.74295 12.3936 4.88548 10.4212H7.82706C7.15727 12.4381 6.75085 14.6786 6.66274 17.0527ZM17.0525 10.4212V17.0527H8.55558C8.64842 14.6455 9.08895 12.3945 9.80326 10.4212H17.0525ZM17.0525 2.918V8.52642H10.6104C12.1613 5.43421 14.4501 3.332 17.0525 2.918ZM26.1956 10.4212C26.9099 12.3945 27.3504 14.6455 27.4433 17.0527H18.9473V10.4212H26.1956ZM18.9473 8.52642V2.918C21.5497 3.332 23.8376 5.43421 25.3875 8.52642H18.9473ZM2.88937 18.9475H6.66274C6.7499 21.3216 7.15727 23.5621 7.82706 25.5791H4.88548C3.74295 23.6057 3.03906 21.3547 2.88937 18.9475ZM17.9999 0.947472C8.58211 0.947472 0.947266 8.58231 0.947266 18.0001C0.947266 27.4179 8.58211 35.0527 17.9999 35.0527C27.4177 35.0527 35.0525 27.4179 35.0525 18.0001C35.0525 8.58231 27.4177 0.947472 17.9999 0.947472Z"
+                  ></path>
+                </svg>
+                <span
+                  class="close__icon close__icon--hidden"
+                  id="icon_close_language"
+                >
+                  <span></span>
+                  <span></span>
+                </span>
+                <span class="language__current">Português</span>
+              </button>
+              <div
+                class="language__menu--hidden language__menu"
+                id="menu_language"
+              >
+                <ul>
+                  <li lang="en"><a>English</a></li>
+                  <li lang="es"><a>Español</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu">
+              <button class="menu__button" id="btn_menu">
+                <span class="menu__icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+              <div class="menu__list menu__list--hidden" id="menu_list">
+                <nav>
+                  <ul>
+                    <li><a href="">Últimas notícias</a></li>
+                    <li><a href="">Comunidade</a></li>
+                    <li><a href="">Compre já</a></li>
+                  </ul>
+                </nav>
+                <a class="menu__button--outlined">Alan Wake Remastered</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__logo-title">
+        <img
+          src="dist/images/AW2_Logo_Horizontal_GREEN_R-1920x399.png"
+          alt=""
+        />
+      </div>
+    </header>
+    <article></article>
+    <main>
+      <section class="monsters">
+        <div class="container">
+          <div class="monsters__container">
+            <h2 class="monsters__title">Monstros têm muitas faces</h2>
+            <p class="monsters__text">
+              Alan Wake 2 está disponível para PC, PlayStation 5 e Xbox Series
+              X|S.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAILER -->
+      <section class="trailer">
+        <div class="trailer__wrapper" id="trailer_view">
+          <img
+            class="trailer__image"
+            src="./dist/images/AW2_launch_trailer_thumbnail_website1.jpg"
+            alt=""
+          />
+          <button class="trailer__button" title="Ver o trailer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <title>controls-play</title>
+              <path
+                class="a"
+                d="M1.118,2.118a1,1,0,0,1,1.447-.894l19.764,9.882a1,1,0,0,1,0,1.788L2.565,22.776a1,1,0,0,1-1.447-.894Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="gallery">
+        <div class="gallery__container">
+          <ul id="gallery_items">
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_054-800x800.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_049-800x800.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_020-800x800.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_16-10-23_013-800x800.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_16-10-23_036-800x800.png"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./dist/images/gallery/AWII_Launch_009-800x800.png"
+                alt=""
+              />
+            </li>
+          </ul>
+          <div class="gallery__controlls container">
+            <button class="gallery__controll disabled">
+              <svg
+                class="gallery__icon"
+                width="16"
+                height="11"
+                viewBox="0 0 16 11"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 5.19995V5.59995C0 5.69995 0.1 5.69995 0.1 5.79995L5.1 10.8C5.3 11 5.6 11 5.8 10.8C6 10.6 6 10.3 5.8 10.1L1.7 5.89995L15.5 5.89995C15.8 5.89995 16 5.69995 16 5.39995C16 5.09995 15.8 4.89995 15.5 4.89995L1.7 4.89995L5.8 0.799951C6 0.599951 6 0.299951 5.8 0.0999508C5.7 -4.92111e-05 5.6 -4.86374e-05 5.4 -4.86374e-05C5.2 -4.86374e-05 5.1 -4.92111e-05 5 0.0999508L0 5.09995C0.1 5.09995 0.1 5.09995 0 5.19995Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+            <button class="gallery__controll">
+              <svg
+                class="gallery__icon"
+                width="16"
+                height="11"
+                viewBox="0 0 16 11"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 5.75V5.35C16 5.25 15.9 5.25 15.9 5.15L10.9 0.15C10.7 -0.05 10.4 -0.05 10.2 0.15C10 0.35 10 0.65 10.2 0.85L14.3 5.05H0.5C0.2 5.05 0 5.25 0 5.55C0 5.85 0.2 6.05 0.5 6.05H14.3L10.2 10.15C10 10.35 10 10.65 10.2 10.85C10.3 10.95 10.4 10.95 10.6 10.95C10.8 10.95 10.9 10.95 11 10.85L16 5.85C15.9 5.85 15.9 5.85 16 5.75Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROTAGONISTS -->
+      <section class="protagonists">
+        <div
+          id="protagonists_image"
+          class="protagonists__image protagonists__image--alan"
+        ></div>
+        <div class="protagonists__container container">
+          <div class="protagonists__text">
+            <nav class="tab" id="protagonists_tab">
+              <ul>
+                <li>
+                  <button class="tab__item tab__item--current" name="alan">
+                    Alan Wake
+                  </button>
+                </li>
+                <li>
+                  <button class="tab__item" name="saga">Saga Anderson</button>
+                </li>
+              </ul>
+            </nav>
+            <div class="tab__content" id="protagonists_content">
+              <div id="alan" name="alan">
+                <h3 class="protagonists__title">A história de Alan Wake</h3>
+                <p>
+                  Alan Wake desapareceu em 2010. Ele era um escritor de sucesso
+                  morando em Nova York. Durante suas férias no noroeste do
+                  Pacífico com sua esposa, Alice Wake, ele ficou cara a cara com
+                  uma força de escuridão sobrenatural. Ela trouxe a obra de
+                  Wake, uma história de terror, à vida. Ele lutou contra essa
+                  presença obscura e conseguiu mandá-la de volta para o local de
+                  onde veio, um lugar obscuro aterrorizante escondido sob um
+                  lago de caldeira próximo à pequena cidade de Bright Falls.
+                  Wake escreveu um final para sua história de terror e, assim,
+                  libertou sua esposa da escuridão sob o lago, mas acabou
+                  prendendo a si próprio no local.
+                </p>
+                <p>
+                  Alan Wake não está morto, apesar de ter desejado estar muitas
+                  vezes. Há 13 anos, ele é um prisioneiro no Lugar Obscuro, onde
+                  seus pesadelos, seus medos e suas histórias se manifestam como
+                  se fossem reais ao seu redor. Por 13 anos, ele lutou para
+                  manter a sanidade e escrever uma história que mudasse a
+                  realidade ao seu redor para conseguir escapar. Até agora, ele
+                  fracassou.
+                </p>
+              </div>
+              <div id="saga" name="saga" class="tab__content--hidden">
+                <h3 class="protagonists__title">A história de Saga Anderson</h3>
+                <p>
+                  Saga Anderson é uma talentosa agente do FBI com fama de
+                  resolver casos impossíveis. Ela chega à pequena comunidade de
+                  Bright Falls, uma cidade no noroeste do Pacífico, para
+                  investigar uma série de assassinatos ritualísticos.
+                </p>
+                <p>
+                  O caso de Anderson se transforma em um pesadelo quando ela
+                  descobre páginas de uma história de terror que começa a se
+                  tornar realidade ao seu redor e sugere ligações perturbadoras
+                  com Alan Wake, um escritor que desapareceu na região há mais
+                  de uma década.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div
+            id="protagonists_image"
+            class="protagonists__image protagonists__image--alan"
+          ></div> -->
+        </div>
+      </section>
+
+      <!-- PLACES -->
+      <section class="protagonists">
+        <div
+          id="protagonists_image"
+          class="protagonists__image protagonists__image--start protagonists__image--pacific"
+        ></div>
+        <div class="protagonists__container container">
+          <span></span>
+          <div class="protagonists__text protagonists__text--end">
+            <nav class="tab" id="protagonists_tab">
+              <ul>
+                <li>
+                  <button class="tab__item tab__item--current" name="pacific">
+                    Noroeste do Pacífico
+                  </button>
+                </li>
+                <li>
+                  <button class="tab__item" name="obscure">
+                    O Lugar Obscuro
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <div class="tab__content" id="protagonists_content">
+              <div id="pacific" name="pacific">
+                <h3 class="protagonists__title">Noroeste do Pacífico</h3>
+                <p>
+                  As paisagens majestosas se estendem por todo o estado de
+                  Washington na região noroeste dos Estados Unidos, às margens
+                  do Oceano Pacífico. A natureza é bela e rica aqui, mas existe
+                  algo assombrosamente misterioso e primitivo nas florestas
+                  escuras, vales arborizados e montanhas nebulosas.
+                </p>
+                <p>
+                  As paisagens majestosas se estendem por todo o estado de
+                  Washington na região noroeste dos Estados Unidos, às margens
+                  do Oceano Pacífico. A natureza é bela e rica aqui, mas existe
+                  algo assombrosamente misterioso e primitivo nas florestas
+                  escuras, vales arborizados e montanhas nebulosas.
+                </p>
+                <p>
+                  A excêntrica e bucólica cidade de Bright Falls também é sede,
+                  anualmente, a Festa do Cervo. Próxima a ela existe a degradada
+                  cidade de Watery, fundada por imigrantes finlandeses em torno
+                  das indústrias de extração de madeira e da pesca. Cauldron
+                  Lake, um lago de caldeira perto de Bright Falls, é um lugar
+                  deslumbrante. Ele costumava ser um destino popular para
+                  caminhadas, mas após ser isolado por um órgão obscuro do
+                  governo anos atrás, ganhou a reputação de local a ser evitado.
+                </p>
+              </div>
+              <div id="obscure" name="obscure" class="tab__content--hidden">
+                <h3 class="protagonists__title">O lugar obscuro</h3>
+                <p>
+                  Uma realidade aterrorizante e obscura esperando sob o Cauldron
+                  Lake. O Lugar Obscuro opera em uma lógica onírica, com saltos
+                  e repetições, definindo sua aparência a partir da mente de
+                  quem o encontra. Alan Wake está aprisionado em suas
+                  profundezas, com seus medos e histórias se manifestando como
+                  realidade ao seu redor. Wake escrevia livros policiais
+                  ambientados em Nova York. Agora, o Lugar Obscuro assume a
+                  forma de uma Nova York deturpada e noturna.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div
+            id="protagonists_image"
+            class="protagonists__image protagonists__image--alan"
+          ></div> -->
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="highlights">
+        <div class="container">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="dist/images/highlights/6D_S9114-800x533.jpg" alt="" />
+                <div class="highlights__text">
+                  <h3>A espera acabou – Alan Wake 2 já está disponível</h3>
+                  <div class="highlights__text--secondary">
+                    Ler mais
+                    <span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8.7v-.4c0-.1-.1-.1-.1-.2l-5-5c-.2-.2-.5-.2-.7 0s-.2.5 0 .7L14.3 8H.5c-.3 0-.5.2-.5.5s.2.5.5.5h13.8l-4.1 4.1c-.2.2-.2.5 0 .7.1.1.2.1.4.1s.3 0 .4-.1l5-5c-.1 0-.1 0 0-.1z"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img
+                  src="dist/images/highlights/screenshot_06-800x450.png"
+                  alt=""
+                />
+                <div class="highlights__text">
+                  <h3>Alan Wake 2 - FAQ</h3>
+                  <div class="highlights__text--secondary">
+                    Ler mais
+                    <span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8.7v-.4c0-.1-.1-.1-.1-.2l-5-5c-.2-.2-.5-.2-.7 0s-.2.5 0 .7L14.3 8H.5c-.3 0-.5.2-.5.5s.2.5.5.5h13.8l-4.1 4.1c-.2.2-.2.5 0 .7.1.1.2.1.4.1s.3 0 .4-.1l5-5c-.1 0-.1 0 0-.1z"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img
+                  src="dist/images/highlights/Makia_website-800x400.jpg"
+                  alt=""
+                />
+                <div class="highlights__text">
+                  <h3>
+                    Moda urbana e Alan Wake 2 se mesclam na Coleção da Seita
+                    Makia x Remedy
+                  </h3>
+                  <div class="highlights__text--secondary">
+                    Ler mais
+                    <span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8.7v-.4c0-.1-.1-.1-.1-.2l-5-5c-.2-.2-.5-.2-.7 0s-.2.5 0 .7L14.3 8H.5c-.3 0-.5.2-.5.5s.2.5.5.5h13.8l-4.1 4.1c-.2.2-.2.5 0 .7.1.1.2.1.4.1s.3 0 .4-.1l5-5c-.1 0-.1 0 0-.1z"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="container">
+          <ul>
+            <li>
+              <a href="#">
+                <div
+                  class="highlights__image"
+                  style="
+                    background-image: url('dist/images/highlights/6D_S9114-800x533.jpg');
+                  "
+                >
+                  <div class="highlights__text">
+                    <h3>A espera acabou - Alan Wake 2 já está disponível</h3>
+                    <div>Ler mais <span>></span></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div
+                  class="highlights__image"
+                  style="
+                    background-image: url('dist/images/highlights/6D_S9114-800x533.jpg');
+                  "
+                >
+                  <div class="highlights__text">
+                    <h3>A espera acabou - Alan Wake 2 já está disponível</h3>
+                    <div>Ler mais <span>></span></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div
+                  class="highlights__image"
+                  style="
+                    background-image: url('dist/images/highlights/6D_S9114-800x533.jpg');
+                  "
+                >
+                  <div class="highlights__text">
+                    <h3>A espera acabou - Alan Wake 2 já está disponível</h3>
+                    <div>Ler mais <span>></span></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <nav class="footer__socialmedia">
+          <ul>
+            <li>
+              <a href="#"
+                ><img
+                  src="./dist/images/svg/icon_facebook.svg"
+                  alt="Visite-nos em Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="./dist/images/svg/icon_twitter.svg"
+                  alt="Visite-nos em Twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="./dist/images/svg/icon_instagram.svg"
+                  alt="Visite-nos em Instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="./dist/images/svg/icon_youtube.svg"
+                  alt="Visite-nos em YouTube"
+              /></a>
+            </li>
+            <li>
+              <a href="#" title=""
+                ><img
+                  src="./dist/images/svg/icon_discord.svg"
+                  alt="Visite-nos em Discord"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__companies">
+          <ul>
+            <li>
+              <a href="#">
+                <svg
+                  version="1.1"
+                  id="logo-remedy-2023"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 566.9 725.9"
+                  xml:space="preserve"
+                >
+                  <path
+                    class="st0"
+                    d="M93.7,725.9h71.1v-17.4h-49.2v-24.7h43.8v-17.4h-43.8v-23.7h49.2v-17.4H93.7V725.9z M457.5,675.6
+                    c0,5.1-0.5,9.7-1.4,13.7c-1,4-2.5,7.4-4.8,10.2c-5,6.3-12.8,9.5-23.4,9.5h-14v-66.6h14c5.6,0,10.4,0.7,14.5,2.2
+                    c4.1,1.5,7.2,3.9,9.5,7.3c2.3,3.4,3.8,6.8,4.5,10.4C457.2,665.8,457.5,670.2,457.5,675.6 M480.2,675.6c0-10.1-2-18.9-6-26.5
+                    c-4-7.6-9.8-13.4-17.4-17.6c-7.6-4.1-16.8-6.2-27.4-6.2h-37.3v100.6h37.3c10.4,0,19.5-2,27.1-6c7.6-4,13.5-9.8,17.6-17.3
+                    C478.2,695,480.2,686,480.2,675.6 M531.8,688.2v37.6h-5.6h-5.3H510v-37.6l-35.1-62.9H499l11.8,23.5c1.1,2,2.9,5.4,5.4,10.4
+                    c2,4,3.5,7,4.5,8.8h0.4c0,0,2.5-4.8,4.5-8.8c2.5-5,4.3-8.4,5.4-10.4l11.8-23.5h24.1L531.8,688.2z M57.8,657.1
+                    c0,4.5-0.9,7.9-2.7,10.1c-1.8,2.2-4.2,3.6-7,4.2c-2.9,0.6-6.7,0.9-11.3,0.9H21.9v-30h15c4.7,0,8.5,0.3,11.3,0.8
+                    c2.8,0.5,5.1,1.8,6.9,4C56.9,649.2,57.8,652.5,57.8,657.1 M73.6,677.6c4.1-4.7,6.1-11.6,6.1-20.5c0-9-2.1-15.8-6.2-20.4
+                    c-4.1-4.7-9.2-7.7-15.3-9.2c-6.1-1.4-13-2.2-20.9-2.2H0v100.6h21.9v-36.6h15.4c0.9,0,1.7,0,2.5-0.1l20.4,36.7h22.7L60,686.4
+                    C65.3,684.8,69.9,681.9,73.6,677.6 M268.8,725.9h20.2V625.3h-34.5l-12.7,48c-1.3,4.9-6.6,27.4-7.5,31.6h-0.3
+                    c-1.6-8.5-4.1-19.1-7.5-31.9l-12.7-47.7h-35v100.6h20.2v-57.2c0-1-0.1-5.4-0.3-13.2l-0.3-14.8h0.4c1,3.5,23,85.1,23,85.1h24
+                    c0,0,20.2-73.8,23.1-85.1h0.4c-0.1,5-0.3,10.1-0.4,15.1c-0.1,5.1-0.2,9.1-0.2,12.3V725.9z M306.9,625.3H378v17.4h-49.2v23.7h43.8
+                    v17.4h-43.8v24.7H378v17.4h-71.1V625.3z M539.1,0h5l5.9,15.4c1.1,3.1,2.9,8.9,2.9,8.9h0.1c0,0,1.8-5.8,2.9-8.9L561.7,0h5.2v28.3
+                    h-3.7V11.2c0-2.5,0.2-7.3,0.2-7.3h-0.1c0,0-1.1,4.3-2,6.5l-6.9,17.9h-3.1l-6.9-17.9c-0.8-2.2-2-6.5-2-6.5h-0.1c0,0,0.2,4.8,0.2,7.3
+                    v17.1h-3.5V0z M512.3,0h22.6v3.4h-9.4v24.9h-3.9V3.4h-9.3V0z M324,123.4v155.5c43.1,0,78.1-34.8,78.1-77.7
+                    C402,158.2,367.1,123.4,324,123.4 M215.5,123.4H134v155.5h81.6c43.1,0,78.1-34.8,78.1-77.7C293.6,158.2,258.7,123.4,215.5,123.4
+                     M485.9,356.6v-35.4c-17.1,22.9-38.9,42.1-64.1,56l64.1,112.7v-67.7l81,142.4H388L324,451.9v112.6h-39.1l-92.3-162.2H134v162.2H0V0
+                    h215.5c39.9,0,77.1,11.6,108.4,31.5V0c66.3,0,125.1,31.8,162,81V45.6c45.2,36.9,74,92.9,74,155.6
+                    C559.9,263.8,531.1,319.7,485.9,356.6"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 815 815"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <g>
+                      <path
+                        class="st0"
+                        d="M384.6,296.7v-54.3c0-8.6-4-12.6-12.3-12.6h-13.5v79.6h13.5C380.6,309.3,384.6,305.3,384.6,296.7z"
+                      ></path>
+                      <g>
+                        <polygon
+                          class="st0"
+                          points="341.2,490.3 333.9,508.9 348.5,508.9 			"
+                        ></polygon>
+                        <path
+                          class="st0"
+                          d="M606.1,125.9H208.9c-32.2,0-44.1,11.9-44.1,44.1v388.7c0,3.6,0.1,7,0.5,10.2c0.7,7,0.9,13.8,7.4,21.6
+                          c0.6,0.8,7.3,5.7,7.3,5.7c3.6,1.8,6,3.1,10.1,4.7l195.6,81.9c10.2,4.7,14.4,6.5,21.8,6.3v0c0,0,0,0,0,0s0,0,0,0v0
+                          c7.4,0.1,11.6-1.7,21.8-6.3l195.6-81.9c4.1-1.6,6.5-2.9,10.1-4.7c0,0,6.7-5,7.3-5.7c6.5-7.8,6.7-14.6,7.4-21.6
+                          c0.3-3.1,0.5-6.5,0.5-10.2V170C650.2,137.8,638.3,125.9,606.1,125.9z M432.3,200.7h32.9v216h-32.9V200.7z M434.5,469.3h19.1v65.3
+                          h-18v-37.5l-16.7,25.6h-0.4l-16.6-25.4v37.3h-17.7v-65.3h19.1l15.6,25.3L434.5,469.3z M326,200.7h51.6
+                          c26.7,0,39.9,13.3,39.9,40.1v57.4c0,26.8-13.2,40.1-39.9,40.1h-18.7v78.4H326V200.7z M236.4,200.7h73.1v29.9h-40.2v61.1H308v29.9
+                          h-38.7v65.1h40.8v29.9h-73.7V200.7z M299.2,525.8c-6.9,5.7-16.5,10.1-28.4,10.1c-20.4,0-35.6-14-35.6-33.8v-0.2
+                          c0-19,14.9-34,35.2-34c11.5,0,19.6,3.5,26.5,9.5l-10.6,12.8c-4.7-3.9-9.3-6.2-15.8-6.2c-9.4,0-16.7,7.9-16.7,17.9v0.2
+                          c0,10.5,7.4,18.1,17.7,18.1c4.4,0,7.7-0.9,10.5-2.7v-7.9h-12.9v-13.3h30.1V525.8z M332.6,468.8h17.5l27.8,65.8h-19.4l-4.8-11.7
+                          h-25.2l-4.7,11.7h-19L332.6,468.8z M406,643.6l-92.1-31.7H502L406,643.6z M518.6,534.6h-53v-65.3h52.6v15.4h-34.6v9.9h31.4v14.3
+                          h-31.4v10.4h35.1V534.6z M482.5,378.4V239c0-26.8,13.2-40.1,39.9-40.1h16c26.7,0,39.6,13,39.6,39.8v44.1h-32.2v-42.3
+                          c0-8.6-4-12.6-12.3-12.6h-5.5c-8.6,0-12.6,4-12.6,12.6v136.4c0,8.6,4,12.6,12.6,12.6h6.1c8.3,0,12.3-4,12.3-12.6v-48.7h32.2v50.3
+                          c0,26.8-13.2,40.1-39.9,40.1h-16.3C495.7,418.5,482.5,405.3,482.5,378.4z M580.3,514.5c0,13.3-10.5,21.3-26.4,21.3
+                          c-11.6,0-22.6-3.6-30.6-10.8l10.1-12c6.4,5.1,13.6,7.8,21.2,7.8c4.9,0,7.5-1.7,7.5-4.5V516c0-2.7-2.1-4.2-11-6.3
+                          c-13.9-3.2-24.6-7.1-24.6-20.5v-0.2c0-12.1,9.6-20.9,25.3-20.9c11.1,0,19.8,3,26.9,8.7l-9.1,12.8c-6-4.2-12.5-6.4-18.3-6.4
+                          c-4.4,0-6.5,1.9-6.5,4.2v0.2c0,3,2.2,4.3,11.3,6.3c15,3.3,24.4,8.1,24.4,20.4V514.5z"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="disclaimers">
+          <p>
+            &copy; Copyright &bullet; 2021 All rights reserved.
+            <a href="#">Políticas de privacidade</a
+            ><a href="#">Configurações de cookies</a>
+          </p>
+          <img class="rating" src="./dist/images/svg/icon_rating.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="./src/scripts/main.js"></script>
   </body>
 </html>

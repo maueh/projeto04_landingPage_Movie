@@ -1,0 +1,111 @@
+@use "variables";
+
+.trailer {
+  // background-image: url("../images/AW2_launch_trailer_thumbnail_website1.jpg");
+  // width: 100%;
+  // background-size: cover;
+  // background-size: 100% 100%;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  position: relative;
+  display: flex;
+  background-color: black;
+
+  &__wrapper {
+    width: 100%;
+    /*animation: fadeInSection linear both;
+      animation-iteration-count: 1;
+      animation-timeline: view(block);
+      animation-range: cover 10% cover 50%;*/
+    // border: 1px solid yellow;
+
+    animation: onView linear forwards;
+    animation-timeline: view();
+    animation-range: cover 30% cover 31%;
+    animation-iteration-count: 2;
+    // animation-delay: 1s;
+    opacity: 0;
+
+    @keyframes onView {
+      from {
+        opacity: 0;
+        // border: 1px solid green;
+      }
+      to {
+        opacity: 0;
+        // border: 1px solid red;
+      }
+    }
+  }
+
+  .animation--removed {
+    animation-timeline: none;
+    // border-style: dotted;
+    animation: slideUp 200ms linear forwards;
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+    min-height: 42.8571428571vw;
+  }
+
+  &__button {
+    position: absolute;
+    top: calc(50% - (142px / 2));
+    left: calc(50% - (142px / 2));
+    width: 142px;
+    height: 142px;
+    border: 2px solid variables.$highlightColor;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      & svg {
+        animation: playAnimation 100ms ease-in-out both;
+      }
+    }
+
+    & svg {
+      width: 30px;
+      fill: #fff36b;
+      transform: translateX(3px);
+    }
+  }
+
+  @keyframes playAnimation {
+    from {
+      transform: translateX(3px);
+      // translate: 0;
+    }
+    to {
+      // translate: 3px;
+      transform: translateX(6px);
+    }
+  }
+
+  @keyframes fadeInSection {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    20% {
+      opacity: 10%;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

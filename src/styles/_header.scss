@@ -1,0 +1,580 @@
+@use "variables";
+@use "mixins";
+
+.header {
+  // width: 100%;
+  height: 100vh;
+  // background-image: url("../images/Alan_Wake_2_keyart_for_web3-2560x1318.webp");
+  object-fit: fill;
+  background-position: center;
+  position: relative;
+
+  // position: sticky;
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    // width: 100%;
+    opacity: 0;
+    animation: onLoadBackground 400ms 500ms forwards ease;
+
+    @keyframes onLoadBackground {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: variables.$mobileBreakpoint) {
+      object-fit: fill;
+      background-position: center;
+    }
+  }
+
+  &__logo-title {
+    padding: 0 60px;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1050px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    // z-index: -1;
+    // position: relative;
+    animation: logoAnimation linear;
+    animation-timeline: view(block);
+    animation-range: cover 50% cover 100%;
+
+    & img {
+      // width: 100%;
+      // margin: 0 auto;
+      opacity: 0;
+      animation: onLoadLogo 600ms ease-in forwards;
+    }
+
+    @keyframes logoAnimation {
+      from {
+        scale: 1;
+        transform: translateY(0);
+      }
+      to {
+        scale: 0;
+        transform: translateY(500px);
+      }
+    }
+
+    @keyframes onLoadLogo {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  .header-bar {
+    z-index: 10;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(0px);
+    animation: show_header-bar 500ms both;
+
+    &--background-color {
+      background-color: variables.$neutralDark;
+
+      .close__icon span {
+        background-color: green;
+      }
+    }
+
+    &--background-color-primary {
+      background-color: variables.$primaryColor;
+
+      .header--logo path {
+        fill: black;
+      }
+
+      .header__button--outlined {
+        display: none;
+      }
+
+      .close__icon span {
+        background-color: black;
+      }
+
+      .language__button {
+        color: black;
+
+        .close__icon span {
+          background-color: black;
+        }
+        &__icon {
+          fill: black;
+          &--hidden {
+            display: none;
+          }
+        }
+      }
+
+      .menu__icon > span {
+        background-color: black;
+        &:first-child {
+          // animation: anim_topBar 1000ms reverse forwards;
+          // transform: translateY(-70px);
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        &:last-child {
+          // animation: anim_bottomBar 1000ms normal forwards;
+          // transform: translateY(-70px);
+          transform: translateY(-9px) rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+          // animation: anim_middleBar 1000ms normal forwards;
+          // transform: translateY(-70px);
+          opacity: 0;
+        }
+      }
+    }
+
+    &--hidden {
+      // display: none;
+      // transform: translateY(0);
+      animation: hide_header-bar 500ms both;
+    }
+
+    @keyframes fadeOut {
+      from {
+        background-color: variables.$neutralDark;
+      }
+      to {
+        background-color: none;
+      }
+    }
+
+    @keyframes hide_header-bar {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-70px);
+      }
+    }
+
+    @keyframes show_header-bar {
+      from {
+        transform: translateY(-70px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    &__container {
+      align-items: center;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      column-gap: 40px;
+      z-index: 10;
+    }
+  }
+  &__navigation {
+    // .header-bar {
+    //   align-items: center;
+    //   height: 70px;
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: flex-start;
+    //   column-gap: 40px;
+    //   z-index: 1;
+    // }
+
+    & h1 > img {
+      display: flex;
+      justify-content: center;
+    }
+
+    &--end {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &--icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &--logo {
+    // width: 165px;
+    height: 37px;
+    display: flex;
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    &--outlined {
+      white-space: nowrap;
+      padding: 11px 30px 5px;
+      border: 1px solid variables.$primaryColor;
+      // @include mixins.customText();
+      @include mixins.customTextExtended($fontWeight: 900);
+      // font-family: aktiv-grotesk-extended, sans-serif;
+      // font-weight: 900;
+      font-style: normal;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-decoration: none;
+      text-wrap: nowrap;
+
+      @media (max-width: variables.$tabletBreakpoint) {
+        display: none;
+      }
+    }
+  }
+
+  .language {
+    &__menu {
+      position: absolute;
+      background-color: black;
+      min-width: 175px;
+      z-index: 1;
+      ul {
+        width: 100%;
+        padding: 10px 0;
+      }
+      li {
+        list-style: none;
+        padding: 5px 20px;
+      }
+      a {
+        @include mixins.customText($fontWeight: 700);
+        text-transform: uppercase;
+        &:hover {
+          color: variables.$highlightColor;
+        }
+      }
+
+      &--hidden {
+        display: none;
+        .language__button__icon {
+          fill: variables.$highlightColor;
+        }
+        .close__icon span {
+          // background-color: variables.$primaryColor;
+          // background-color: red;
+        }
+      }
+    }
+    &__button {
+      padding: 10px 0;
+      @include mixins.customText($fontWeight: 700);
+      text-transform: uppercase;
+
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+
+      .close__icon {
+        display: flex;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & span {
+          display: inline-block;
+          width: 30px;
+          height: 2px;
+          // background-color: variables.$primaryColor;
+          background-color: variables.$primaryColor;
+          // transform-origin: left;
+          &:first-child {
+            transform: translateY(1px) rotate(45deg);
+          }
+          &:last-child {
+            transform: translateY(-1px) rotate(-45deg);
+          }
+        }
+
+        &--hidden {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .language__button__icon {
+          fill: variables.$highlightColor;
+        }
+        & span {
+          color: variables.$highlightColor;
+        }
+        ~ #menu_language {
+          display: flex;
+        }
+
+        .close__icon span {
+          background-color: variables.$highlightColor;
+        }
+      }
+
+      &__icon {
+        width: 25px;
+        height: 25px;
+        fill: variables.$primaryColor;
+
+        &--hidden {
+          display: none;
+
+          & ~ .close__icon span {
+            // background-color: variables.$primaryColor;
+            // background-color: black;
+          }
+        }
+      }
+
+      & span.language__current {
+        padding-top: 3px;
+        @media (max-width: variables.$tabletBreakpoint) {
+          display: none;
+        }
+      }
+    }
+  }
+  .menu {
+    &__button {
+      &:hover {
+        .menu__icon > span {
+          transition: transform 100ms;
+          background-color: variables.$highlightColor;
+          /*
+          &:first-child {
+            // animation: anim_topBar 100ms both alternate;
+            transform: translateY(9px) rotate(45deg);
+          }
+
+          &:last-child {
+            // animation: anim_bottomBar 100ms both alternate;
+            transform: translateY(-9px) rotate(-45deg);
+          }
+
+          &:nth-child(2) {
+            // animation: anim_middleBar 100ms both alternate;
+            opacity: 0;
+          }*/
+        }
+      }
+    }
+    &__icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+
+      & span {
+        display: inline-block;
+        width: 30px;
+        height: 2px;
+        background-color: variables.$primaryColor;
+
+        &:first-child {
+          // animation: anim_topBar 100ms normal backwards running;
+          transform: translateY(0x) rotate(0);
+        }
+
+        &:last-child {
+          // animation: anim_bottomBar 100ms normal backwards;
+          transform: translateY(0) rotate(0);
+        }
+
+        &:nth-child(2) {
+          // animation: anim_middleBar 100ms normal backwards;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__list {
+      // z-index: 1;
+
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background-color: variables.$primaryColor;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      align-self: center;
+      margin-bottom: 30px;
+
+      @media (max-width: variables.$tabletBreakpoint) {
+        padding: 15px;
+      }
+
+      .header-bar {
+        background-color: variables.$primaryColor;
+      }
+
+      &--hidden {
+        display: none;
+        ~ .close__icon span {
+          background-color: variables.$primaryColor;
+          background-color: red;
+        }
+      }
+
+      & span,
+      ul {
+        overflow-y: auto;
+        max-height: 50vh;
+
+        @media (max-width: variables.$tabletBreakpoint) {
+          max-height: 40vh;
+        }
+      }
+
+      & li {
+        display: flex;
+        justify-content: center;
+        @include mixins.customTextExtended($fontSize: 55px, $fontWeight: 900);
+        margin: 1em 0;
+
+        @media (max-width: variables.$tabletBreakpoint) {
+          font-size: 26px;
+          text-align: center;
+        }
+      }
+
+      & nav a {
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        color: black;
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: black;
+          transform: scaleX(0%);
+          position: absolute;
+          left: 1%;
+          bottom: 0;
+          transition: transform 250ms;
+          transform-origin: left;
+        }
+
+        &:hover {
+          // border-bottom: 1px solid red;
+          &:before {
+            transform-origin: left;
+            transform: scaleX(98%);
+            left: 1%;
+          }
+        }
+
+        @keyframes anim_menuLink {
+          0% {
+            transform: scaleX(0%);
+          }
+          100% {
+            transform: scaleX(98%);
+          }
+        }
+      }
+    }
+
+    &__button {
+      display: flex;
+      padding: 12px;
+      padding-top: 15px;
+
+      &--outlined {
+        @include mixins.customTextExtended($fontSize: 28px, $fontWeight: 900);
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        padding-top: 15px;
+        border: 1px solid black;
+        color: black;
+        text-transform: uppercase;
+        justify-content: space-between;
+
+        &:hover {
+          background-color: black;
+          color: white;
+          a {
+            border: none;
+          }
+        }
+
+        @media (max-width: variables.$tabletBreakpoint) {
+          font-size: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes anim_middleBar {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes anim_topBar {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: translateY(9px) rotate(45deg);
+    }
+  }
+
+  @keyframes anim_bottomBar {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}

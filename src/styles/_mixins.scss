@@ -1,0 +1,12 @@
+@mixin customText($fontSize: 16px, $fontWeight: 400) {
+  font-size: $fontSize;
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: $fontWeight;
+  font-style: normal;
+  line-height: 1;
+}
+
+@mixin customTextExtended($fontSize: 16px, $fontWeight: 400) {
+  @include customText($fontSize, $fontWeight);
+  font-family: aktiv-grotesk-extended, sans-serif;
+}

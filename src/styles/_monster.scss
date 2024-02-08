@@ -1,0 +1,37 @@
+@use "variables";
+
+.monsters {
+  z-index: 1;
+  padding: 100px 0;
+  background-color: black;
+  position: relative;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 45px;
+    text-transform: uppercase;
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+
+    @media (max-width: variables.$mobileBreakpoint) {
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+}
