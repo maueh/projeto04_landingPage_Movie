@@ -29,9 +29,15 @@
       }
     }
 
-    @media (max-width: variables.$mobileBreakpoint) {
-      object-fit: fill;
-      background-position: center;
+    @media (max-width: variables.$tabletBreakpoint), (orientation: portrait) {
+      width: 100%;
+
+      & img {
+        height: 100vh;
+        width: auto;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
